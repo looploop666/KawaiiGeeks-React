@@ -1,19 +1,8 @@
-.navBar ul li {
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
+.me-auto{
+    margin-right: 0!important;  
 }
 
-.navBar li a {
-    display: inline;
-    text-decoration: none;
-    padding: 8px;
-    background-color:pink;
-    color: purple;
-  }
-
 .logoKawaiiGeeks{
-    width: 100px;
-    
+    width: 70px;
+    margin: 0.5em;
 }
