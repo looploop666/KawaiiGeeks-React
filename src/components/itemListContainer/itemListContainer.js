@@ -29,7 +29,7 @@ export const ItemListContainer = ({greeting}) => {
                 {greeting}
             </h1>
      
-        <ItemCount stock={25} initial={1}/>
+        
 
         <ItemList products={products} />
 

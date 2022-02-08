@@ -1,18 +1,48 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { NavBar } from './components/navBar/navBar';
-import { ItemListContainer } from "./components/itemListContainer/itemListContainer";
-//import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {Cart} from './pages/cart';
+import {Contacto} from './pages/contacto';
+import {Error} from './pages/error';
+import {Faq} from './pages/faq';
+import {Home} from './pages/home';
+import {Tienda} from './pages/tienda';
+import {Product} from './pages/product';
+
 
 function App() {
   return (
-    
-    <div className="App">
-      
-        <NavBar />
-        <ItemListContainer greeting = {'Somos GEEKS pero no perdimos lo KAWAII!'}/>
-      
-    </div>
+    <Router>
+      <div className="App">
+          <NavBar />
+           <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+              <Route path="/tienda">
+                <Tienda />
+              </Route>
+              <Route path="/contacto">
+                <Contacto />
+              </Route>
+              <Route path="/faq">
+                <Faq />
+              </Route>
+              <Route path="/product/:productId">
+                <Product />
+              </Route>
+              <Route path="*">
+                <Error />
+              </Route>
+          </Switch>
+         
+      </div>
+    </Router>
     
   );
 }

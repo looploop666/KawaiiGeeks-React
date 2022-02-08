@@ -14,11 +14,11 @@ export const NavBar = () => {
         <img src={logo} className="logoKawaiiGeeks" />
         </Navbar.Brand>
         <Nav className="me-auto">    
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#tienda">Tienda</Nav.Link>
-            <Nav.Link href="#faq">Preguntas Frecuentes</Nav.Link>
-            <Nav.Link href="#contacto">Contacto</Nav.Link>
-            <Nav.Link href="#carrito"><CartWidget /></Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/tienda">Tienda</Nav.Link>
+            <Nav.Link href="/faq">Preguntas Frecuentes</Nav.Link>
+            <Nav.Link href="/contacto">Contacto</Nav.Link>
+            <Nav.Link href="/cart"><CartWidget /></Nav.Link>
         </Nav>
       </Container>
     </Navbar>
