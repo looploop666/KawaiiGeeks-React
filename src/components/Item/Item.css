@@ -1,5 +1,22 @@
 .card-img-top {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     margin: auto;
+    padding: 0.5em;
+}
+.card{
+    flex-direction: column;
+}
+
+.card-text{
+    font-size:xx-small;
+}
+
+.card-title{
+    font-size: small!important;
+}
+
+.btn{
+    font-size: small;
+    margin: 1em;
 }

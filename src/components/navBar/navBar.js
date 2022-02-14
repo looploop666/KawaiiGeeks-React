@@ -14,7 +14,7 @@ export const NavBar = () => {
         <img src={logo} className="logoKawaiiGeeks" />
         </Navbar.Brand>
         <Nav className="me-auto">    
-            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link exact href="/">Inicio</Nav.Link>
             <Nav.Link href="/tienda">Tienda</Nav.Link>
             <Nav.Link href="/faq">Preguntas Frecuentes</Nav.Link>
             <Nav.Link href="/contacto">Contacto</Nav.Link>

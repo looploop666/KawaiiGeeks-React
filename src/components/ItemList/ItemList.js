@@ -14,7 +14,7 @@ export const ItemList = ({products}) => {
                         title={product.title}
                         price={product.price}
                         description={product.description}
-                        pictureUrl={product.pictureUrl}
+                        pictureUrl={product.image}
                     />
                 );
             })}

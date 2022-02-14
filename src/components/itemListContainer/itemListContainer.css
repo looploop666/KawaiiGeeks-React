@@ -1,5 +1,10 @@
-.itemListContainer{
+.greeting{
     color:violet;
     margin:2em;
 
+}
+
+.productsLoading .productsLoadingError{
+    color: black;
+    margin: 2em;
 }

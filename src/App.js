@@ -10,6 +10,8 @@ import {Faq} from './pages/faq';
 import {Home} from './pages/home';
 import {Tienda} from './pages/tienda';
 import {Product} from './pages/product';
+import {Category} from './pages/category';
+import { CategoryDetail } from './components/CategoryDetail/CategoryDetail';
 
 
 function App() {
@@ -36,6 +38,9 @@ function App() {
               <Route path="/product/:productId">
                 <Product />
               </Route>
+              <Route path='/category/:categoryId'>
+						    <CategoryDetail />
+					    </Route>
               <Route path="*">
                 <Error />
               </Route>
