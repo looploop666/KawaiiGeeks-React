@@ -1,3 +1,12 @@
+Kawaii Geeks - Lucía Seba ( Comisión 23230 - JS React )
+
+Tecnologías utilizadas:
+
+-React JS
+-react-bootstrap v2.1.0: Manejo de estilos
+-react-router-dom v5.1.2: Manejo de rutas
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
