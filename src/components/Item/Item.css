@@ -2,7 +2,8 @@
     width: 100px;
     height: 100px;
     margin: auto;
-    padding: 0.5em;
+    margin-top: 1em;
+    
 }
 .card{
     flex-direction: column;
@@ -10,7 +11,11 @@
 
 .card-text{
     font-size:xx-small;
+    align-items: center;
+
 }
+
+
 
 .card-title{
     font-size: small!important;

@@ -8,12 +8,12 @@ export const Item = ({ key, id , title, price, description, pictureUrl}) => {
     
     <div className="item">
         
-        <Card style={{ width: "18rem" , height: "25rem"}}>
+        <Card style={{ width: "18rem" , height: "18rem"}}>
           <Card.Img variant="top" src={pictureUrl}/>
           <Card.Body>
-            <Card.Title>{title}</Card.Title>
+            <Card.Title>{title.substring(0,50) + "..."}</Card.Title>
             <Card.Text>
-              {description}
+              {description.substring(0,150) + "..."}
             </Card.Text>
               <Link to={`/product/${id}`}><Button variant="secondary">Ver detalle del Producto</Button></Link>
           </Card.Body>

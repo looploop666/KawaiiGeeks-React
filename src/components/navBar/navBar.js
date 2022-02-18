@@ -10,7 +10,7 @@ export const NavBar = () => {
     
     <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Kawaii Geeks
+        <Navbar.Brand href="/tienda">Kawaii Geeks
         <img src={logo} className="logoKawaiiGeeks" />
         </Navbar.Brand>
         <Nav className="me-auto">    
