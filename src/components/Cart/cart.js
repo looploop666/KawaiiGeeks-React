@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button, Badge, Card} from "react-bootstrap";
+import { Button, Card} from "react-bootstrap";
 import { ItemCount } from "../itemCount/itemCount";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/cartContext";
@@ -24,25 +24,26 @@ export const Cart = ( ) => {
 
     }else{
         return(
-            <div className="itemList">
-                {productsIncorporated.map((product) => {
-                    <article className="item">
-                        <Card style={{ width: "25rem" , height: "18rem"}}>
-                            <Card.Img variant="top" src={product.pictureUrl}/>
-                            <Card.Body>
-                                <Card.Title>{product.title.substring(0,50) + "..."}</Card.Title>
-                                <Card.Text>
-                                {product.description.substring(0,150) + "..."}
-                                {product.quantity + "unidad/es"}
-                                </Card.Text>
+            <>
+            <div className="d-flex flex-column">
+                
+                {productsIncorporated.map((product) => (
+                    
+                        <Card>
+                            <Card.Body className="d-flex flex-column">
+                                <Card.Title>{product.name}</Card.Title>
+                                <Card.Text>{"Precio por Unidad: $" + product.price}</Card.Text>
+                                <Card.Text>{product.quantity + " unidad/es"}</Card.Text>
                                 <Button variant="warning" onClick={() => removeItem(product.id, product.quantity, product.price)}> Eliminar </Button>
                             </Card.Body>
                         </Card>
-                    </article>
-                })}
-                <Button variant="outline-danger" onClick={() => clear()}>Vaciar carrito</Button>
-                <Button variant="outline-success" gap="3">Finalizar Compra</Button>
+                  
+                ))}
+                
             </div>
+            <Button variant="outline-danger" onClick={() => clear()}>Vaciar carrito</Button>
+            <Button variant="outline-success" gap="3">Finalizar Compra</Button>
+            </>
         );
     };
 };

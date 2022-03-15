@@ -1,0 +1,9 @@
+
+
+.cardInCart{
+    width: 25rem;
+    height: 10rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
