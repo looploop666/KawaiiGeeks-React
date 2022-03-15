@@ -22,8 +22,6 @@ export const CategoryListContainer = () => {
   useEffect(() => {
     getCategories();
   }, []);
-
-  console.log(categories);
   return (
     <div className="">
       {categories.map((category) => (

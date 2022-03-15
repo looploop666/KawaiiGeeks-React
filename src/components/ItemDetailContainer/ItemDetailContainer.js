@@ -15,7 +15,6 @@ export const ItemDetailContainer = () => {
       setShowLoadingProduct(true);
       const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
       const data = await response.json();
-      console.log("data", data);
       setProduct(data);
     } catch (error) {
       setError(error);

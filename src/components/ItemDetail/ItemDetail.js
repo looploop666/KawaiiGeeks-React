@@ -1,17 +1,22 @@
 import { Link } from "react-router-dom";
 import { Button, Badge, Card} from "react-bootstrap";
 import { ItemCount } from "../itemCount/itemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ product }) => {
 
   const [showCounter, setShowCounter] = useState(true);
   const [quantityToAdd, setQuantityToAdd] = useState();
+  const { addItem } = useContext(CartContext);
 
   const onAdd = (event) => {
     setQuantityToAdd(event.target.value);
+    console.log('quantityToAdd:', quantityToAdd);
     setShowCounter(false);
+    addItem(product,quantityToAdd);
   };
+
 
 
   return (
@@ -37,13 +42,13 @@ export const ItemDetail = ({ product }) => {
 
             {showCounter ? (
                 <div className="">
-                    <ItemCount stock={25} initial={1} onAdd={onAdd}/>
+                    <ItemCount stock={25} initial={1} onAdd={onAdd} product={product}/>
                 </div>
             ) : (
                 <div className="">
                   <p>Producto agregado exitosamente al carrito!</p>
 
-                  <Link to="/cart">
+                  <Link to="/cartDetail">
                     <Button variant="secondary">Volver al carrito</Button>
                   </Link>
                 </div>
