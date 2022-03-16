@@ -19,7 +19,7 @@ export const CartProvider = ({children}) => {
     isInCart(product.id) ? setProductsIncorporated(
           productsIncorporated.map((item) => {
             if (product.id === item.id) {
-              product.quantity += quantity
+              item.quantity += quantity
             }
             return item;
           })

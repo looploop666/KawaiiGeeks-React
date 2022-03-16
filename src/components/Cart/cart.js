@@ -25,24 +25,26 @@ export const Cart = ( ) => {
     }else{
         return(
             <>
-            <div className="d-flex flex-column">
+            <div className="">
                 
                 {productsIncorporated.map((product) => (
-                    
-                        <Card>
-                            <Card.Body className="d-flex flex-column">
-                                <Card.Title>{product.name}</Card.Title>
-                                <Card.Text>{"Precio por Unidad: $" + product.price}</Card.Text>
-                                <Card.Text>{product.quantity + " unidad/es"}</Card.Text>
-                                <Button variant="warning" onClick={() => removeItem(product.id, product.quantity, product.price)}> Eliminar </Button>
-                            </Card.Body>
-                        </Card>
+                        <div className="d-inline-block">
+                            <Card className="">
+                                <Card.Body className="">
+                                    <Card.Title>{product.name}</Card.Title>
+                                    <Card.Text>{"Precio por Unidad: $" + product.price}</Card.Text>
+                                    <Card.Text>{product.quantity + " unidad/es"}</Card.Text>
+                                    <Button variant="warning" onClick={() => removeItem(product.id, product.quantity, product.price)}> Eliminar </Button>
+                                </Card.Body>
+                            </Card>
+                        </div>
                   
                 ))}
                 
             </div>
             <Button variant="outline-danger" onClick={() => clear()}>Vaciar carrito</Button>
             <Button variant="outline-success" gap="3">Finalizar Compra</Button>
+            <Link to="/tienda"><Button variant="secondary">Seguir Comprando</Button></Link>
             </>
         );
     };

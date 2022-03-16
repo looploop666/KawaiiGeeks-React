@@ -7,7 +7,6 @@ import { Button, Badge, Card} from "react-bootstrap";
 
 export const ItemCount = ({ stock, initial, product}) => {
   const [count, setCount] = useState(initial);
-  const [quantityToAdd, setQuantityToAdd] = useState(0);
   const { addItem } = useContext(CartContext);
   const [showCounter, setShowCounter] = useState(true);
 
@@ -24,10 +23,8 @@ export const ItemCount = ({ stock, initial, product}) => {
   };
 
   const onAdd = () => {
-    setQuantityToAdd(count);
-    console.log('quantityToAdd:', quantityToAdd);
     setShowCounter(false);
-    addItem(product,quantityToAdd);
+    addItem(product,count);
   };
 
   return (
