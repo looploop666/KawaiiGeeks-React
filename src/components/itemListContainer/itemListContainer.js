@@ -1,5 +1,4 @@
 import "./itemListContainer.css";
-import { ItemCount } from '../itemCount/itemCount'
 import { ItemList } from '../ItemList/ItemList'
 import { useEffect, useState } from 'react';
 import { CategoryListContainer } from "../CategoryListContainer/CategoryListContainer";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button, Card} from "react-bootstrap";
+import { Button, Card, Row, Col} from "react-bootstrap";
 import { ItemCount } from "../itemCount/itemCount";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/cartContext";
@@ -28,17 +28,21 @@ export const Cart = ( ) => {
             <div className="">
                 
                 {productsIncorporated.map((product) => (
-                        <div className="d-inline-block">
-                            <Card className="">
-                                <Card.Body className="">
-                                    <Card.Title>{product.name}</Card.Title>
-                                    <Card.Text>{"Precio por Unidad: $" + product.price}</Card.Text>
-                                    <Card.Text>{product.quantity + " unidad/es"}</Card.Text>
-                                    <Button variant="warning" onClick={() => removeItem(product.id, product.quantity, product.price)}> Eliminar </Button>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                  
+                        
+                    <Card className="">
+                        <Card.Body className="text-start">
+                            <Row>
+                                <Col><Card.Title>{product.name}</Card.Title></Col>
+                                <Col className="text-center">{product.quantity === 1 ? product.quantity + " unidad" : product.quantity + " unidades"}</Col>
+                                <Col className="text-end text-info"><h5>{"$" + (product.price * product.quantity).toFixed(2)}</h5></Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Button variant="outline-warning ms-0" onClick={() => removeItem(product.id, product.quantity, product.price)}> Eliminar </Button>
+                                </Col>
+                            </Row>
+                        </Card.Body>
+                    </Card> 
                 ))}
                 
             </div>

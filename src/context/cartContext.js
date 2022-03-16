@@ -7,10 +7,11 @@ export const CartContext = createContext(initialCartContext);
 export const CartProvider = ({children}) => {
     
     const [productsIncorporated, setProductsIncorporated] = useState([]);
+    console.log('productsIncorporated 1 :',productsIncorporated); 
     const [total, setTotal] = useState(0);
 
     const isInCart = (idNewProduct) => {
-        const findItem = productsIncorporated.includes((product) => product.id === idNewProduct);
+        const findItem = productsIncorporated.find((product) => product.id === idNewProduct);
         console.log('findItem:',findItem); 
         return findItem;
     };
@@ -28,7 +29,7 @@ export const CartProvider = ({children}) => {
           ...productsIncorporated,
           { id: product.id, name: product.title, price: product.price, quantity: quantity },
         ]);
-    console.log('productsIncorporated:',productsIncorporated); 
+    console.log('productsIncorporated 2:',productsIncorporated); 
     const sumItem = product.price * quantity;
     setTotal(total + sumItem);
   };
