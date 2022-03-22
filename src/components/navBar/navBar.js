@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 
 
 
+
 export const NavBar = () => {
   return (
     
     <Navbar bg="light" variant="light">
       <Container>
         <Navbar.Brand href="/tienda">Kawaii Geeks
-        <img src={logo} className="logoKawaiiGeeks" />
+        <img src={logo} alt='logo' className="logoKawaiiGeeks" />
         </Navbar.Brand>
         <Nav className="me-auto">    
             <Nav.Link exact href="/">Inicio</Nav.Link>

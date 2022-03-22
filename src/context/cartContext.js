@@ -8,11 +8,11 @@ export const CartProvider = ({children}) => {
     
     const [productsIncorporated, setProductsIncorporated] = useState([]);
     console.log('productsIncorporated 1 :',productsIncorporated); 
-    const [total, setTotal] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
     const isInCart = (idNewProduct) => {
         const findItem = productsIncorporated.find((product) => product.id === idNewProduct);
-        console.log('findItem:',findItem); 
         return findItem;
     };
 
@@ -28,25 +28,27 @@ export const CartProvider = ({children}) => {
       : setProductsIncorporated([
           ...productsIncorporated,
           { id: product.id, name: product.title, price: product.price, quantity: quantity },
-        ]);
-    console.log('productsIncorporated 2:',productsIncorporated); 
+        ]); 
     const sumItem = product.price * quantity;
-    setTotal(total + sumItem);
+    setTotalPrice(totalPrice + sumItem);
+    setTotalQuantity(totalQuantity + quantity);
   };
 
   const removeItem = (id, quantity, price) => {
     setProductsIncorporated(productsIncorporated.filter(item => item.id !== id))
     
     const restItem = quantity * price;
-    setTotal(total - restItem);
+    setTotalPrice(totalPrice - restItem);
+    setTotalQuantity(totalQuantity - quantity);
   };
 
   const clear = () => {
     setProductsIncorporated([]);
+    setTotalQuantity(0);
   }
 
   return (
-    <CartContext.Provider value={{ productsIncorporated, addItem, removeItem, clear, total }}>
+    <CartContext.Provider value={{ productsIncorporated, addItem, removeItem, clear, totalPrice, totalQuantity }}>
       {children}
     </CartContext.Provider>
      
