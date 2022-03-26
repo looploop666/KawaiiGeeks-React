@@ -7,7 +7,6 @@ export const CartContext = createContext(initialCartContext);
 export const CartProvider = ({children}) => {
     
     const [productsIncorporated, setProductsIncorporated] = useState([]);
-    console.log('productsIncorporated 1 :',productsIncorporated); 
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantity, setTotalQuantity] = useState(0);
 

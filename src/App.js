@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { NavBar } from './components/navBar/navBar';
-
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {CartDetail} from './pages/cartDetail';
 import {Contacto} from './pages/contacto';
 import {Error} from './pages/error';
@@ -10,9 +9,9 @@ import {Faq} from './pages/faq';
 import {Home} from './pages/home';
 import {Tienda} from './pages/tienda';
 import {Product} from './pages/product';
-import {Category} from './pages/category';
 import { CategoryDetail } from './components/CategoryDetail/CategoryDetail';
-import {cartContext, CartProvider} from './context/cartContext'
+import {CartProvider} from './context/cartContext'
+import {Checkout} from './pages/cartCheckout'
 
 function App() {
   return (
@@ -41,6 +40,9 @@ function App() {
                 </Route>
                 <Route path='/category/:categoryId'>
                   <CategoryDetail />
+                </Route>
+                <Route path='/cartCheckout'>
+                  <Checkout />
                 </Route>
                 <Route path="*">
                   <Error />

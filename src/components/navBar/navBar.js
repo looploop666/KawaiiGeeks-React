@@ -4,9 +4,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { CartWidget } from "../cartWidget/cartWidget";
 import { Link } from "react-router-dom";
 
-
-
-
 export const NavBar = () => {
   return (
     

@@ -5,6 +5,8 @@ import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { ItemCount } from "../itemCount/itemCount";
 import { Link } from "react-router-dom";
 import { Button, Badge, Card} from "react-bootstrap";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 
 
@@ -13,19 +15,34 @@ export const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("");
   const [showLoadingProduct , setShowLoadingProduct] = useState(false);
+  
+
+  // const getProduct = async () => {
+  //   try{
+  //     setShowLoadingProduct(true);
+  //     const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
+  //     const data = await response.json();
+  //     setProduct(data);
+  //   } catch (error) {
+  //     setError(error);
+  //   } finally {
+  //     setShowLoadingProduct(false);
+  //   }
+
+  // };
 
   const getProduct = async () => {
-    try{
+    try {
       setShowLoadingProduct(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
-      const data = await response.json();
-      setProduct(data);
+      const docRef = doc(db, "items", productId);
+      const docSnap = await getDoc(docRef)
+      const result = {id: docSnap.id, ...docSnap.data()}
+      setProduct(result);
     } catch (error) {
       setError(error);
     } finally {
       setShowLoadingProduct(false);
     }
-
   };
 
   useEffect(() => {

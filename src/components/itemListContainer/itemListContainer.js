@@ -2,6 +2,8 @@ import "./itemListContainer.css";
 import { ItemList } from '../ItemList/ItemList'
 import { useEffect, useState } from 'react';
 import { CategoryListContainer } from "../CategoryListContainer/CategoryListContainer";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 export const ItemListContainer = ({greeting}) => {
 
@@ -9,18 +11,36 @@ export const ItemListContainer = ({greeting}) => {
     const [error, setError] = useState('');
     const [showLoading, setShowLoading] = useState(false);
 
+    // const getProducts = async () => {
+    //     try {
+    //         setShowLoading(true);
+    //         const response = await fetch('https://fakestoreapi.com/products');
+    //         const data = await response.json();
+    //         setProducts(data);
+    //     } catch (error) {
+    //         setError(error);
+    //     } finally{
+    //         setShowLoading(false);
+    //     }
+    // };
+
     const getProducts = async () => {
         try {
-            setShowLoading(true);
-            const response = await fetch('https://fakestoreapi.com/products');
-            const data = await response.json();
-            setProducts(data);
+          setShowLoading(true);
+          const { docs } = await getDocs(query(collection(db, "items")));
+          const parseData = docs.map((doc) => {
+            return {
+              id: doc.id,
+              ...doc.data(),
+            };
+          });
+          setProducts(parseData);
         } catch (error) {
-            setError(error);
-        } finally{
+          setError(error);
+        } finally {
             setShowLoading(false);
         }
-    };
+      };
 
     useEffect(() => {
         getProducts();

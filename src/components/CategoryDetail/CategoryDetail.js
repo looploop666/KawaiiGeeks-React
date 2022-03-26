@@ -3,8 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import {Item} from "../Item/Item";
 import { Card, Button} from "react-bootstrap";
 import '../ItemList/ItemList.css';
-import '../Item/Item.css'
-import '../CategoryDetail/CategoryDetail.css'
+import '../Item/Item.css';
+import '../CategoryDetail/CategoryDetail.css';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
 export const CategoryDetail = () => {
   const { categoryId } = useParams();
@@ -12,22 +14,41 @@ export const CategoryDetail = () => {
   const [error, setError] = useState([]);
 
 
-  const getCategories = async () => {
-    try{
-    const response = await fetch("https://fakestoreapi.com/products");
-    const data = await response.json();
+  // const getCategories = async () => {
+  //   try{
+  //   const response = await fetch("https://fakestoreapi.com/products");
+  //   const data = await response.json();
 
-    const dataFilter = await data.filter(
-      (prod) => prod.category === `${categoryId}`
-    );
+  //   const dataFilter = await data.filter(
+  //     (prod) => prod.category === `${categoryId}`
+  //   );
     
-    console.log("a ver ", dataFilter);
-    setCategories(dataFilter);
-    }catch{
+  //   console.log("a ver ", dataFilter);
+  //   setCategories(dataFilter);
+  //   }catch{
+  //       setError(error);
+  //       console.log(error);
+  //   }
+  // };
+
+
+    
+
+    const getCategories = async () => {
+      try {
+        const { docs } = await getDocs(query(collection(db, "items"), where("category", "==", categoryId)));
+        const parseCategory = docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+        setCategories(parseCategory);
+      } catch (error) {
         setError(error);
-        console.log(error);
-    }
-  };
+      }
+    };
+  
 
   useEffect(() => {
     getCategories();

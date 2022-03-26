@@ -58,7 +58,7 @@ export const Cart = ( ) => {
                         </Card.Body>
             </Card> 
             <Button variant="outline-danger" onClick={() => clear()}>Vaciar carrito</Button>
-            <Button variant="outline-success" gap="3">Finalizar Compra</Button>
+            <Link to="/cartCheckout"><Button variant="outline-success" gap="3">Finalizar Compra</Button></Link>
             <Link to="/tienda"><Button variant="secondary">Seguir Comprando</Button></Link>
             </>
         );
