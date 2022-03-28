@@ -1,7 +1,7 @@
 import { Card, Button} from "react-bootstrap";
 import "./Item.css";
 import { Link } from 'react-router-dom';
-
+//MUESTRO LAS CARACTERISTICAS BASICAS DEL PRODUCTO
 export const Item = ({ key, id , title, price, description, pictureUrl}) => {
 
   return (

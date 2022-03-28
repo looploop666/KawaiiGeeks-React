@@ -13,27 +13,7 @@ export const CategoryDetail = () => {
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState([]);
 
-
-  // const getCategories = async () => {
-  //   try{
-  //   const response = await fetch("https://fakestoreapi.com/products");
-  //   const data = await response.json();
-
-  //   const dataFilter = await data.filter(
-  //     (prod) => prod.category === `${categoryId}`
-  //   );
-    
-  //   console.log("a ver ", dataFilter);
-  //   setCategories(dataFilter);
-  //   }catch{
-  //       setError(error);
-  //       console.log(error);
-  //   }
-  // };
-
-
-    
-
+    //SE REALIZA EL GET DE LOS ITEMS FILTRADOS POR CATEGORIA
     const getCategories = async () => {
       try {
         const { docs } = await getDocs(query(collection(db, "items"), where("category", "==", categoryId)));

@@ -11,19 +11,7 @@ export const ItemListContainer = ({greeting}) => {
     const [error, setError] = useState('');
     const [showLoading, setShowLoading] = useState(false);
 
-    // const getProducts = async () => {
-    //     try {
-    //         setShowLoading(true);
-    //         const response = await fetch('https://fakestoreapi.com/products');
-    //         const data = await response.json();
-    //         setProducts(data);
-    //     } catch (error) {
-    //         setError(error);
-    //     } finally{
-    //         setShowLoading(false);
-    //     }
-    // };
-
+    //GET A TODOS LOS PRODUCTOS. MUESTRO LA LISTA DE PRODUCTOS Y LA LISTA DE CATEGORIAS
     const getProducts = async () => {
         try {
           setShowLoading(true);

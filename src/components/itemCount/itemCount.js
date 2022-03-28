@@ -9,19 +9,19 @@ export const ItemCount = ({ stock, initial, product}) => {
   const [count, setCount] = useState(initial);
   const { addItem } = useContext(CartContext);
   const [showCounter, setShowCounter] = useState(true);
-
+  //ACTUALIZO LA CANT DE ITEMS CUANDO SE INCREMENTA 
   const increaseItem = () => {
     const newValue = count + 1
     if (newValue <= stock)
         setCount(newValue)
   };
-  
+  //ACTUALIZO LA CANT DE ITEMS CUANDO DE DECREMENTA
   const decreaseItem = () => {
       const newValue = count - 1
       if(newValue >= initial)
         setCount(newValue)
   };
-
+  //AL HACER CLICK EN 'AGREGAR AL CARRITO' NO SE MUESTRA MÁS EL CONTADOR Y SE INVOCA A LA FCION ADDITEM
   const onAdd = () => {
     setShowCounter(false);
     addItem(product,count);

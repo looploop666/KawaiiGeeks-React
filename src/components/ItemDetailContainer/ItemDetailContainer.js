@@ -15,22 +15,8 @@ export const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [error, setError] = useState("");
   const [showLoadingProduct , setShowLoadingProduct] = useState(false);
-  
 
-  // const getProduct = async () => {
-  //   try{
-  //     setShowLoadingProduct(true);
-  //     const response = await fetch(`https://fakestoreapi.com/products/${productId}`);
-  //     const data = await response.json();
-  //     setProduct(data);
-  //   } catch (error) {
-  //     setError(error);
-  //   } finally {
-  //     setShowLoadingProduct(false);
-  //   }
-
-  // };
-
+  //GET DE TODOS LOS PRODUCTOS Y MUESTRO SU DETALLE Y SU CONTADOR
   const getProduct = async () => {
     try {
       setShowLoadingProduct(true);

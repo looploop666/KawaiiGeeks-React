@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 
+//FUNCION CON LAS VALIDACIONES REQUERIDAS PARA CADA INPUT DEL FORM
 const validate = (values) => {
   const errors = {};
 
@@ -43,6 +44,7 @@ export const CartCheckout = () => {
     },
     validate,
     onSubmit: async (values) => {
+      //LUEGO DEL SUBMIT DEL FORM SE DECLARA UN JSON CON LOS DATOS DE LA NUEVA ORDEN
       const newOrder = {
         buyer: {
           name: values.name,
@@ -59,12 +61,15 @@ export const CartCheckout = () => {
         total: totalPrice,
       };
       try {
+        //SE ENVÍA LA ORDEN DE COMPRA A LA BASE EN FIREBASE MEDIANTE ADDDOC
         const data = await addDoc(collection(db, "cartOrders"), newOrder);
         setDocRef(data);
       } catch {
         setError(error);
         console.log(error);
       } finally {
+         // UNA VEZ CONFIRMADO EL ENVIO DEL PEDIDO AL BACKEND SE BORRAN LOS DATOS DEL 
+        //CARRITO Y SE COLOCA SHOWFORM EN FALSE PARA QUE NO SE SIGA MOSTRANDO EL FORM
         setShowForm(false);
         clear();
       }
@@ -72,6 +77,7 @@ export const CartCheckout = () => {
   });
   return (
     <div>
+      {/* SE INICIALIZA EL STATE DE SHOWFORM EN TRUE PARA QUE SIEMPRE LO MUESTRE LA PRIMERA VEZ */}
       {showForm ? (
         
 
@@ -161,6 +167,7 @@ export const CartCheckout = () => {
         </div>
 
       ) : (
+        //SHOWFORM EN FALSE
         <div>
           <p>Compra realizada!</p>
           <p>ID de seguimiento: {docRef.id}</p>

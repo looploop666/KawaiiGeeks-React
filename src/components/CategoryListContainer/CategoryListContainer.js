@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./CategoryListContainer.css";
 import { Badge} from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
 export const CategoryListContainer = () => {
@@ -10,16 +10,7 @@ export const CategoryListContainer = () => {
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState('');
 
-  // const getCategories = async () => {
-  //   try{
-  //     const response = await fetch("https://fakestoreapi.com/products/categories");
-  //     const data = await response.json();
-  //     setCategories(data);
-      
-  //   } catch(error){
-  //     setError(error);
-  //   }
-  // };
+  //SE REALIZA EL GET DE LAS CATEGORIAS 
   const getCategories = async () => {
     try {
       const { docs } = await getDocs(query(collection(db, "categories")));

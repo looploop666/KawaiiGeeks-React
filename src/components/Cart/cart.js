@@ -8,7 +8,7 @@ import "./cart.css";
 export const Cart = ( ) => {
 
     const { productsIncorporated, removeItem, clear, totalPrice } = useContext(CartContext);
-
+    //VALIDA SI EL CARRITO ESTÁ VACÍO 
     if (productsIncorporated.length === 0){
         return(
         
@@ -22,7 +22,7 @@ export const Cart = ( ) => {
             </div>
         </div>
         )
-
+    //SI HAY PRODUCTOS EN EL CARRITO LOS MUESTRO
     }else{
         return(
             <>

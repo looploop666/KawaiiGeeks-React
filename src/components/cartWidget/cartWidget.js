@@ -11,11 +11,13 @@ export const CartWidget = () => {
   return (
     <div className="">
       <Link to={`/cartDetail`}>
+        {/* //SI EL CARRITO ESTÁ VACÍO UNICAMENTE SE MUESTRA EL ICONO */}
         {totalQuantity === 0 ? (
           <div>
             <FaShoppingCart />
           </div>
         ) : (
+          // SI EL CARRITO TIENE ITEMS SE MUESTRA EL ICONO Y LA CANTIDAD
           <div>
             <FaShoppingCart />
             <Badge pill className="">

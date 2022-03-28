@@ -15,7 +15,9 @@ import {Checkout} from './pages/cartCheckout'
 
 function App() {
   return (
+    //APLICO CONTEXTO CARTCONTEXT
     <CartProvider>
+      {/* //APLICO ROUTEO */}
       <Router>
         <div className="App">
             <NavBar />
