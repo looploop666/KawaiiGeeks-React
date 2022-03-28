@@ -2,12 +2,12 @@
 
 ## Tecnologías Utilizadas
 
-HTML5
-JavaScript
-CSS
-React Bootstrap
-Formik: Librería para la gestión de formularios.
-Firebase
+#HTML5
+#JavaScript
+#CSS
+#React Bootstrap
+#Formik: Librería para la gestión de formularios.
+#Firebase: backend y base de datos
 
 ## Instalación
 Clona este proyecto desde https://github.com/looploop666/KawaiiGeeks-React/
