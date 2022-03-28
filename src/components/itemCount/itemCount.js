@@ -2,7 +2,7 @@ import "./itemCount.css";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
-import { Button, Badge, Card} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 
 export const ItemCount = ({ stock, initial, product}) => {

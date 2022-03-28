@@ -5,8 +5,7 @@ import { useState } from "react";
 import { CartContext } from "../../context/cartContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Button, FormControl } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 const validate = (values) => {
   const errors = {};

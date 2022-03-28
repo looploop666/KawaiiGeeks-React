@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { ItemCount } from "../itemCount/itemCount";
 import { Link } from "react-router-dom";
-import { Button, Badge, Card} from "react-bootstrap";
+import { Button, Card} from "react-bootstrap";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 

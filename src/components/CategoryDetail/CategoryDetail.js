@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {Item} from "../Item/Item";
-import { Card, Button} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import '../ItemList/ItemList.css';
 import '../Item/Item.css';
 import '../CategoryDetail/CategoryDetail.css';
