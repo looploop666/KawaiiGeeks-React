@@ -21,7 +21,7 @@ La web se trata de un Ecommerce desde el cual se pueden navegar todos los produc
 Al seleccionar un producto accedemos a poder seleccionar la cantidad de items a comprar, se agregan al carrito y podemos elegir volver a seguir navegando los productos
 o ir a un resumen de la compra. Finalmente si se quiere confirmar la compra se accede a un formulario donde el comprador debe dejar sus datos. Luego de completados estos datos, la orden de compra impacta en la base de datos, registrando los datos del comprador y el detalle de la compra.
 
-
+![Gif KawaiiGeeks](./public/img/KawaiiGeeks.gif)
 
 ## Autor
 Lucía Seba
