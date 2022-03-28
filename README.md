@@ -5,8 +5,7 @@
 #HTML5
 #JavaScript
 #CSS
-#React Bootstrap v2.1.0: Manejo de estilos
-#React-router-dom v5.1.2: Manejo de rutas
+#React Bootstrap
 #Formik: Librería para la gestión de formularios.
 #Firebase: backend y base de datos
 
