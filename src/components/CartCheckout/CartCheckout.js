@@ -120,7 +120,7 @@ export const CartCheckout = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.phone}
                   placeholder="11-3333-4444"
-                  pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}"
+                  pattern="[0-9]{2}[0-9]{4}[0-9]{4}"
                 />
               </div>
               {formik.touched.phone && formik.errors.phone ? (
